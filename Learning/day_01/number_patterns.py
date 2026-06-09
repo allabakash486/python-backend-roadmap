@@ -396,18 +396,11 @@ print("The factorial of", number, "is:", result)
 
 
 #This program will find the factorial of a number without using loops.
-def factorial_without_loops(num):
-    if num < 0:
-        return "Factorial is not defined for negative numbers"
-    elif num == 0 or num == 1:
+def factorial_without_loops(n):
+    if n == 0 or n == 1:
         return 1
-    else:
-        result = 1
-        i = 2
-        while i <= num:
-            result *= i
-            i += 1
-        return result
+
+    return n * factorial_without_loops(n - 1)
 number = 5
 result = factorial_without_loops(number)
 print("The factorial of", number, "is:", result)
@@ -537,12 +530,11 @@ print("The number", number, "is", result)
 
 #This program will check if a number is a perfect cube or not.
 def perfect_cube_or_not(num):
-    if num < 0:
-        return "not a perfect cube"
-    root = int(num ** (1/3))
-    if root * root * root == num:
-        return "perfect cube"
-    return "not a perfect cube"
+    root = round(num ** (1/3))
+
+    if root ** 3 == num:
+        return True
+    return False
 number = int(input("Enter a number: "))
 result = perfect_cube_or_not(number)
 print("The number", number, "is", result)
@@ -728,17 +720,7 @@ number = int(input("Enter a number: "))
 result = perfect_square_or_not(number)
 print("The number", number, "is", result)
 
-#this program will print whether the number is a perfect cube or not.
-def perfect_cube_or_not(num):
-    if num < 0:
-        return "not a perfect cube"
-    root = int(num ** (1/3))
-    if root * root * root == num:
-        return "perfect cube"
-    return "not a perfect cube"
-number = int(input("Enter a number: "))
-result = perfect_cube_or_not(number)
-print("The number", number, "is", result)
+
 
 #this program will print whether the number is a palindrome or not.
 def palindrome_or_not(num):
