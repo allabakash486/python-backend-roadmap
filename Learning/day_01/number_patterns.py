@@ -32,6 +32,19 @@ result = prim_or_not(number)
 print("The number", number, "is", result)
 
 
+#this program will print whether the number is a prime number or not.
+def prime_or_not_(num):
+    if num <= 1:
+        return "not prime"
+    for i in range(2, int(num//2) + 1):
+        if num % i == 0:
+            return "not prime"
+    return "prime"
+number = int(input("Enter a number: "))
+result = prime_or_not_(number)
+print("The number", number, "is", result)
+
+
 #this program will print whether the number is a perfect square or not.
 def perfect_square_or_not(num):
     if num < 0:
@@ -55,4 +68,29 @@ def perfect_cube_or_not(num):
 number = int(input("Enter a number: "))
 result = perfect_cube_or_not(number)
 print("The number", number, "is", result)
+
+#this program will print whether the number is a palindrome or not.
+def palindrome_or_not(num):
+    num_str = str(num)
+    if num_str == num_str[::-1]:
+        return "palindrome"
+    return "not a palindrome"   
+number = int(input("Enter a number: "))
+result = palindrome_or_not(number)
+print("The number", number, "is", result)
+
+
+#this program will print whether the number is a armstrong number or not.
+def armstrong_or_not(num):
+    num_str = str(num)
+    num_digits = len(num_str)
+    armstrong_sum = sum(int(digit) ** num_digits for digit in num_str)
+    if armstrong_sum == num:
+        return "armstrong number"
+    return "not an armstrong number"    
+
+number = int(input("Enter a number: "))
+result = armstrong_or_not(number)
+print("The number", number, "is", result)
+
 
