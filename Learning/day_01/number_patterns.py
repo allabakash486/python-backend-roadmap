@@ -1064,6 +1064,101 @@ Continuous Number Triangle
 Reverse Continuous Triangle
 Binary Number Pattern"""
 
+#This program of pattern_1.
+def pattern_1():
+    for i in range(1, 6):
+        for j in range(1, i + 1):
+            print(j, end="")
+        print()
+
+pattern_1()
+
+#This program of pattern_2.
+def pattern_2():
+    for i in range(5, 0, -1):
+        for j in range(1, i + 1):
+            print(j, end="")
+        print()
+
+pattern_2()
+
+#This program of pattern_3.
+def pattern_3():
+    for i in range(1, 6):
+        print(str(i) * i)
+
+pattern_3()
+
+#This program of pattern_4.
+def pattern_4():
+    num = 1
+
+    for i in range(1, 5):
+        for j in range(i):
+            print(num, end="")
+            num += 1
+        print()
+
+pattern_4()
+
+#This program of pattern_5.
+def pattern_5():
+    for i in range(1, 6):
+        for j in range(5, 5 - i, -1):
+            print(j, end="")
+        print()
+
+pattern_5()
+
+#This program of pattern_6.
+def pattern_6():
+    for i in range(1, 6):
+        print("5" * i)
+
+pattern_6()
+
+#This program of pattern_7.
+def pattern_7():
+    for i in range(1, 6):
+        for j in range(i, 0, -1):
+            print(j, end="")
+        print()
+
+pattern_7()
+
+#This program of pattern_8.
+def pattern_8():
+    for i in range(1, 7):
+        print(str(i) * i)
+
+pattern_8()
+
+#This program of pattern_9.
+def pattern_9():
+    for i in range(1, 7):
+        for j in range(1, i + 1):
+            print(j, end="")
+        print()
+
+pattern_9()
+
+#This program of pattern_10.
+# Pattern 10
+# 123456
+# 12345
+# 1234
+# 12
+# 123
+# 1
+
+def pattern_10():
+    for i in range(6, 0, -1):
+        for j in range(1, i + 1):
+            print(j, end="")
+        print()
+
+pattern_10()
+
 
 #This program will print the right triangle number pattern.
 def right_triangle_number_pattern(n):
@@ -1318,5 +1413,6 @@ def binary_number_pattern(n):
         print()
 N = 5
 binary_number_pattern(N)
+
 
 
