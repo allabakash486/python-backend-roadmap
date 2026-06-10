@@ -733,4 +733,590 @@ result = palindrome_or_not(number)
 print("The number", number, "is", result)
 
 
+#The below programs which are related to  number patterns 
+""""
+Level 1: Basic Number Patterns
+1
+1
+12
+123
+1234
+12345
+2
+12345
+1234
+123
+12
+1
+3
+1
+22
+333
+4444
+55555
+4
+1
+23
+456
+78910
+5
+5
+54
+543
+5432
+54321
+6
+5
+55
+555
+5555
+55555
+7
+1
+21
+321
+4321
+54321
+8
+1
+22
+333
+4444
+55555
+666666
+9
+1
+12
+123
+1234
+12345
+123456
+10
+123456
+12345
+1234
+123
+12
+1
+Level 2: Continuous Number Patterns
+11
+1
+2 3
+4 5 6
+7 8 9 10
+12
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+13
+1
+2 3
+3 4 5
+4 5 6 7
+14
+1
+2 2
+3 3 3
+4 4 4 4
+15
+1
+2 1
+3 2 1
+4 3 2 1
+Level 3: Pyramid Number Patterns
+16
+    1
+   121
+  12321
+ 1234321
+123454321
+17
+    1
+   232
+  34543
+ 4567654
+18
+    1
+   222
+  33333
+ 4444444
+19
+    1
+   123
+  12345
+ 1234567
+20
+    1
+   212
+  32123
+ 4321234
+Level 4: Floyd's Triangle
+21
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+22 (Reverse Floyd's)
+11 12 13 14 15
+7 8 9 10
+4 5 6
+2 3
+1
+Level 5: Pascal Triangle
+23
+        1
+      1 1
+    1 2 1
+   1 3 3 1
+ 1 4 6 4 1
+24
+
+Print Pascal Triangle for N rows.
+
+Level 6: Diamond Number Patterns
+25
+    1
+   121
+  12321
+ 1234321
+  12321
+   121
+    1
+26
+    1
+   222
+  33333
+ 4444444
+  33333
+   222
+    1
+Level 7: Hollow Number Patterns
+27
+1
+1 1
+1   1
+1     1
+1111111
+28
+12345
+1   5
+1   5
+1   5
+12345
+29
+1 2 3 4 5
+1       5
+1       5
+1       5
+1 2 3 4 5
+Level 8: Advanced Number Patterns
+30
+1
+01
+101
+0101
+10101
+31
+1
+10
+101
+1010
+10101
+32
+1
+121
+12321
+1234321
+123454321
+33
+1
+232
+34543
+4567654
+567898765
+34
+9
+98
+987
+9876
+98765
+35
+98765
+9876
+987
+98
+9
+Level 9: Interview Favorite Patterns
+36
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+37
+5
+4 4
+3 3 3
+2 2 2 2
+1 1 1 1 1
+38
+1
+2 3
+4 5 6
+7 8 9 10
+39
+1
+3 5
+7 9 11
+13 15 17 19
+40
+2
+4 6
+8 10 12
+14 16 18 20
+Level 10: Expert Patterns
+41
+1
+12
+123
+1234
+12345
+1234
+123
+12
+1
+42
+1
+121
+12321
+1234321
+123454321
+1234321
+12321
+121
+1
+43
+1
+22
+333
+4444
+55555
+4444
+333
+22
+1
+44
+        1
+      2 3 2
+    3 4 5 4 3
+  4 5 6 7 6 5 4
+45
+1
+2 3
+6 5 4
+7 8 9 10
+15 14 13 12 11
+46
+1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
+47
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+48
+5
+5 4
+5 4 3
+5 4 3 2
+5 4 3 2 1
+49
+1
+2 2
+1 1 1
+2 2 2 2
+1 1 1 1 1
+50
+1
+23
+456
+78910
+1112131415
+Most Asked in Interviews
+
+Focus on these first:
+
+Right Triangle Number Pattern
+Reverse Number Triangle
+Floyd's Triangle
+Pascal Triangle
+Palindrome Pyramid
+Number Diamond
+Hollow Number Rectangle
+Continuous Number Triangle
+Reverse Continuous Triangle
+Binary Number Pattern"""
+
+
+#This program will print the right triangle number pattern.
+def right_triangle_number_pattern(n):
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(j, end=' ')
+        print()
+N = 5
+right_triangle_number_pattern(N)
+
+#This program will print the reverse number triangle pattern.
+def reverse_number_triangle(n):
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
+            print(j, end=' ')
+        print()
+N = 5
+reverse_number_triangle(N)
+
+#This program will print Floyd's triangle pattern.
+def floyds_triangle(n):
+    num = 1
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(num, end=' ')
+            num += 1
+        print()
+N = 5
+floyds_triangle(N)
+
+
+#This program will print Pascal's triangle pattern.
+def pascal_triangle(n):
+    for i in range(n):
+        row = [1] * (i + 1)
+        for j in range(1, i):
+            row[j] = row[j - 1] * (i - j + 1) // j
+        print(' '.join(map(str, row)).center(n * 2))
+N = 5
+pascal_triangle(N)
+
+
+#This program will print the palindrome pyramid pattern.
+def palindrome_pyramid(n):
+    for i in range(1, n + 1):
+        # Print spaces
+        print(' ' * (n - i), end='')
+        # Print increasing numbers
+        for j in range(1, i + 1):
+            print(j, end='')
+        # Print decreasing numbers
+        for j in range(i - 1, 0, -1):
+            print(j, end='')
+        print()
+N = 5
+palindrome_pyramid(N)
+
+#This program will print the number diamond pattern.
+def number_diamond(n):
+    for i in range(1, n + 1):
+        print(' ' * (n - i), end='')
+        for j in range(1, i + 1):
+            print(j, end='')
+        for j in range(i - 1, 0, -1):
+            print(j, end='')
+        print()
+    for i in range(n - 1, 0, -1):
+        print(' ' * (n - i), end='')
+        for j in range(1, i + 1):
+            print(j, end='')
+        for j in range(i - 1, 0, -1):
+            print(j, end='')
+        print()
+N = 5
+number_diamond(N)
+
+
+#This program will print the hollow number rectangle pattern.
+def hollow_number_rectangle(rows, cols):
+    for i in range(1, rows + 1):
+        for j in range(1, cols + 1):
+            if i == 1 or i == rows or j == 1 or j == cols:
+                print(j, end=' ')
+            else:
+                print(' ', end=' ')
+        print()
+rows = 5
+cols = 5
+hollow_number_rectangle(rows, cols)
+
+#This program will print the continuous number triangle pattern.
+def continuous_number_triangle(n):
+    num = 1
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(num, end=' ')
+            num += 1
+        print()
+N = 5
+continuous_number_triangle(N)
+
+
+#This program will print the reverse continuous triangle pattern.
+def reverse_continuous_triangle(n):
+    num = n * (n + 1) // 2
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
+            print(num, end=' ')
+            num -= 1
+        print()
+N = 5
+reverse_continuous_triangle(N)
+
+
+#This program will print the binary number pattern.
+def binary_number_pattern(n):
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(j % 2, end=' ')
+        print()
+N = 5
+binary_number_pattern(N)
+
+#This program will print the most asked number pattern in interviews.
+def most_asked_pattern(n):
+    num = 1
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(num, end=' ')
+            num += 1
+        print()
+N = 5
+most_asked_pattern(N)
+
+#This program will print the right triangle number pattern.
+def right_triangle_number_pattern(n):
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(j, end=' ')
+        print()
+N = 5
+right_triangle_number_pattern(N)
+
+
+#This program will print the reverse number triangle pattern.
+def reverse_number_triangle(n):
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
+            print(j, end=' ')
+        print()
+N = 5
+reverse_number_triangle(N)
+
+#This program will print Floyd's triangle pattern.
+def floyds_triangle(n):
+    num = 1
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(num, end=' ')
+            num += 1
+        print()
+N = 5
+floyds_triangle(N)
+
+#This program will print Pascal's triangle pattern.
+def pascal_triangle(n):
+    for i in range(n):
+        row = [1] * (i + 1)
+        for j in range(1, i):
+            row[j] = row[j - 1] * (i - j + 1) // j
+        print(' '.join(map(str, row)).center(n * 2))
+N = 5
+pascal_triangle(N)
+
+
+#This program will print the palindrome pyramid pattern.
+def palindrome_pyramid(n):
+    for i in range(1, n + 1):
+        # Print spaces
+        print(' ' * (n - i), end='')
+        # Print increasing numbers
+        for j in range(1, i + 1):
+            print(j, end='')
+        # Print decreasing numbers
+        for j in range(i - 1, 0, -1):
+            print(j, end='')
+        print()
+N = 5
+palindrome_pyramid(N)
+
+
+#This program will print the number diamond pattern.
+def number_diamond(n):
+    for i in range(1, n + 1):
+        print(' ' * (n - i), end='')
+        for j in range(1, i + 1):
+            print(j, end='')
+        for j in range(i - 1, 0, -1):
+            print(j, end='')
+        print()
+    for i in range(n - 1, 0, -1):
+        print(' ' * (n - i), end='')
+        for j in range(1, i + 1):
+            print(j, end='')
+        for j in range(i - 1, 0, -1):
+            print(j, end='')
+        print()
+N = 5
+number_diamond(N)
+
+#This program will print the hollow number rectangle pattern.
+def hollow_number_rectangle(rows, cols):
+    for i in range(1, rows + 1):
+        for j in range(1, cols + 1):
+            if i == 1 or i == rows or j == 1 or j == cols:
+                print(j, end=' ')
+            else:
+                print(' ', end=' ')
+        print()
+rows = 5
+cols = 5
+hollow_number_rectangle(rows, cols)
+
+#This program will print the continuous number triangle pattern.
+def continuous_number_triangle(n):
+    num = 1
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(num, end=' ')
+            num += 1
+        print()
+N = 5
+continuous_number_triangle(N)
+
+#This program will print the reverse continuous triangle pattern.
+def reverse_continuous_triangle(n):
+    num = n * (n + 1) // 2
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
+            print(num, end=' ')
+            num -= 1
+        print()
+N = 5
+reverse_continuous_triangle(N)
+
+
+#This program will print the binary number pattern.90
+def binary_number_pattern(n):
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print(j % 2, end=' ')
+        print()
+N = 5
+binary_number_pattern(N)
+
 
