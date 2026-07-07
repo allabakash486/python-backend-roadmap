@@ -23,3 +23,17 @@ def find_smallest_number_in_array(arr):
     return smallest
 array = [1, 2, 3, 4, 5]
 print(find_smallest_number_in_array(array))
+
+def find_second_largest_number_in_array(arr):
+    if len(arr) < 2:
+        return None
+    largest = second_largest = float('-inf')
+    for num in arr:
+        if num > largest:
+            second_largest = largest
+            largest = num
+        elif largest > num > second_largest:
+            second_largest = num
+    return second_largest
+array = [1,2,3,4,5]
+print(find_second_largest_number_in_array(array))
