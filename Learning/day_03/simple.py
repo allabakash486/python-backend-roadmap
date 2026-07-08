@@ -37,3 +37,18 @@ def find_second_largest_number_in_array(arr):
     return second_largest
 array = [1,2,3,4,5]
 print(find_second_largest_number_in_array(array))
+
+def sort_array(arr):
+    if len(arr) < 2:
+        return arr
+
+    for i in range(len(arr)):
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+    return arr
+
+
+array = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+print(sort_array(array))
